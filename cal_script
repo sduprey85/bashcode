@@ -1,0 +1,32 @@
+#In progress bash script for automating a response based on the day of the week and what a personal schedule may entail. 
+#Script goal is to have the script ask what day it is and suggest a course of action with a output. (What day is it? It is <$DAY> so you should <suggestion for action based on day variable>.
+
+
+#!/bin/bash
+
+cal_script2 () {
+Cd Desktop/Code/ && ./cal_script2
+}
+
+echo -n "Answer: What day of the week is it? "
+read DAY
+
+echo -n "Today is $DAY, so "
+
+case $DAY in
+Monday)
+echo -n "you should study linux today."
+;;
+
+Tuesday)
+echo -n "you should study for your cloud cert today."
+;;
+
+Saturday | Sunday)
+echo -n "you should remember to study or take a break."
+;;
+
+esac
+
+
+<HOW TO POINT TO A CERTAIN EXE IN ORDER TO RUN SCRIPT FROM CURRENT DIRECTORY WITHOUT HAVING TO RUN THE COMMAND TO CD>
