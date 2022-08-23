@@ -1,0 +1,21 @@
+#!/bin/bash
+TODAY=$(date +%Y-%m-%d-%H-%M-)
+read PREFIX
+PREFIX=$1
+    for ((i = 100 ; i <=199 ; i++))
+    do
+    HOST=$i
+#may need to insert one more thing in this line
+echo "$ORIGIN example.com
+    3600 soa ns1.example.com. (
+        zone-admin.example.com.     ; address of responsible party
+        $TODAY                      ; serial number
+        3600                        ; refresh period
+        600                         ; retry period
+        604800                      ; expire time
+        1800                      ) ; minimum ttl
+    86400 NS ns1.example.com
+    86400 NS ns2.example.com
+    3600 MX 10 mail.example.com
+    DHCP $HOST 60A $PREFIX, $HOST"
+done
